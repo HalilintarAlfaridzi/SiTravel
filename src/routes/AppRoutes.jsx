@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { MainLayout } from "../layouts/MainLayout";
 import { About } from "../pages/About";
 import { Contact } from "../pages/Contact";
@@ -10,7 +10,7 @@ import { PaketWisata } from "../pages/PaketWisata";
 import { SewaMobil } from "../pages/SewaMobil";
 import { StudyTour } from "../pages/StudyTour";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     element: <MainLayout />,
     children: [

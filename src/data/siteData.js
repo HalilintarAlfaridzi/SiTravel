@@ -14,6 +14,8 @@ import {
   Users,
 } from "lucide-react";
 
+const publicAsset = (path) => `${import.meta.env.BASE_URL}${path}`;
+
 export const WHATSAPP_NUMBER = "6281234567890";
 
 export const navItems = [
@@ -70,7 +72,7 @@ export const seo = {
 };
 
 export const images = {
-  hero: "/images/hero-jogja-landscape.png",
+  hero: publicAsset("images/hero-jogja-landscape.png"),
   jogja:
     "https://images.unsplash.com/photo-1604998103924-89e012e5265a?auto=format&fit=crop&w=1400&q=85",
   car:

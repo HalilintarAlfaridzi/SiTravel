@@ -4,7 +4,7 @@ import { Container } from "./Container";
 import { whatsappUrl } from "../../utils/whatsapp";
 import { MessageCircle } from "lucide-react";
 
-const DEFAULT_HEADER_IMAGE = "/images/hero-jogja-landscape.png";
+const DEFAULT_HEADER_IMAGE = `${import.meta.env.BASE_URL}images/hero-jogja-landscape.png`;
 
 export function PageHeader({ badge, title, description, cta = "Konsultasi via WhatsApp", message, image }) {
   const headerImage = image || DEFAULT_HEADER_IMAGE;
@@ -16,7 +16,7 @@ export function PageHeader({ badge, title, description, cta = "Konsultasi via Wh
         src={headerImage}
         alt=""
         onError={(event) => {
-          if (event.currentTarget.src !== window.location.origin + DEFAULT_HEADER_IMAGE) {
+          if (event.currentTarget.src !== new URL(DEFAULT_HEADER_IMAGE, window.location.origin).href) {
             event.currentTarget.src = DEFAULT_HEADER_IMAGE;
           }
         }}
